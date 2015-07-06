@@ -14,7 +14,7 @@ public final class WordCountSpark {
 	public static void main(String[] args) throws Exception {
 		if (args.length < 4) {
 			System.err
-					.println("Usage: JavaWordCount <master> <input> <output> <numOutputFiles>");
+					.println("Usage: WordCountSpark <master> <input> <output> <numOutputFiles>");
 			System.exit(1);
 		}
 

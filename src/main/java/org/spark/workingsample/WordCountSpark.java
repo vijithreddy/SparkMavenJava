@@ -19,35 +19,35 @@ public final class WordCountSpark {
 		}
 
 		@SuppressWarnings("resource")
-		//Create Spark context with the desired master
 		JavaSparkContext spark = new JavaSparkContext(args[0],
 				"Java Wordcount", System.getenv("SPARK_HOME"),
 				JavaSparkContext.jarOfClass(WordCountSpark.class));
-		//Input file RDD is created from the command line
+
 		JavaRDD<String> file = spark.textFile(args[1]);
-		
+
 		Integer numOutputFiles = Integer.parseInt(args[3]);
-		//Separate to each word
+
+	
+		FlatMapFunction<String, String> wordMap=inputLine->{
+			return Arrays.asList(inputLine.toLowerCase().split("\\W+"));
+		};
+		
 		JavaRDD<String> words = file
-				.flatMap(new FlatMapFunction<String, String>() {
-					public Iterable<String> call(String s) {
-						return Arrays.asList(s.toLowerCase().split("\\W+"));
-					}
-				});
-		// Map each word to integer 1
-		JavaPairRDD<String, Integer> pairs = words.mapToPair(new PairFunction<String, String, Integer>() {
-					public Tuple2<String, Integer> call(String s) {
-						return new Tuple2<String, Integer>(s, 1);
-					}
-				});
-		// Add the mapped integers for same words.
+				.flatMap(wordMap);
+		
+		PairFunction<String, String, Integer> mapOnes=(String s)->{
+			return new Tuple2<String, Integer>(s, 1);
+		};
+
+		JavaPairRDD<String, Integer> pairs = words.mapToPair(mapOnes);
+		
+		Function2<Integer, Integer, Integer>pairWords=(Integer a, Integer b)->{
+			return a + b;
+		};
+
 		JavaPairRDD<String, Integer> counts = pairs.reduceByKey(
-				new Function2<Integer, Integer, Integer>() {
-					public Integer call(Integer a, Integer b) {
-						return a + b;
-					}
-				}, numOutputFiles);
-		//sort by words and save to the output file mentioned in the command line
+				pairWords, numOutputFiles);
+
 		counts.sortByKey(true).saveAsTextFile(args[2]);
 		System.exit(0);
 	}

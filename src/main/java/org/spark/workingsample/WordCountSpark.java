@@ -9,6 +9,10 @@ import java.util.Arrays;
 
 import scala.Tuple2;
 
+/**
+ * @author vijith.reddy
+ *
+ */
 public final class WordCountSpark {
 	public static void main(String[] args) throws Exception {
 		if (args.length < 4) {

@@ -8,3 +8,58 @@ To execute the spark job, run the following command replacing the properties in 
 
 
 Use sparkjob.conf found in this repository or build your custom configuration file.
+
+Following are the instructions for people who haven't installed Spark standalone
+
+Note: Spark can be installed in any unix like systems (Mac, any flavor of Linux etc..)
+
+Skip the steps if not necessary 
+
+Step 1: Install Oracle JDK 8 (Functional programming paradigm is supported using Java 8, well not truly a 100% functional paradigm, but java has brought the best of two worlds that is: OO and Functional). For reference
+
+Note: Please do not use Open JDK
+
+http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html 
+
+Step 2: Set JAVA_HOME 
+
+export JAVA_HOME=$(/usr/libexec/java_home) 
+
+Recommendation: Create a .bash_profile shell file, add your environment variables, and source that file for permanent use. 
+
+Step 3: Install Scala
+
+Mac users install homebrew first running the following command 
+
+ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" 
+ 
+ Step 4: Set SCALA_HOME 
+
+export SCALA_HOME=/usr/local/bin/scala
+
+export PATH=$PATH:$SCALA_HOME/bin 
+
+Step 5 : Download Spark from https://spark.apache.org/downloads.html  and extract
+
+Step 6: Build and Install Apache Spark 
+
+sbt/sbt clean assembly (sbt directory is under extracted spark installed directory)
+
+Step 7: Fire up Spark shell (pyspark or spark-shell)
+
+Step 8: Start Spark server:
+
+Go to spark installation directory and run:
+
+./sbin/start-master.sh
+
+Go to the logs and check the Spark master URL
+
+
+Step 9: Start Spark Workder Daemons:
+
+./sbin/start-slave.sh <master-spark-URL>
+
+Check localhost:8080 for worker daemon, if not check the logs under logs directory for troubleshooting.
+
+Happy Sparking!!!!

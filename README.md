@@ -58,7 +58,9 @@ Go to the logs and check the Spark master URL
 
 Step 9: Start Spark Workder Daemons:
 
-./sbin/start-slave.sh <master-spark-URL>
+./sbin/start-slave.sh <master-spark-URL> -c <add cores> -m <Add memory>
+
+If you have not specified -c and -m values then Spark slave is assigned the entire system capacity.
 
 Check localhost:8080 for worker daemon, if not check the logs under logs directory for troubleshooting.
 

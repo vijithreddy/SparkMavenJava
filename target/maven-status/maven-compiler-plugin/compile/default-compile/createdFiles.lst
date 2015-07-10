@@ -1,0 +1,4 @@
+org/spark/mappers/MapperFunctions.class
+org/spark/workingsample/WordCountSpark.class
+org/spark/reducers/ReducerFunctions.class
+org/spark/flatmaps/FlatMapFunctions.class

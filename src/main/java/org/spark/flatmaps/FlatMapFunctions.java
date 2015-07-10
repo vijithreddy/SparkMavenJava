@@ -15,6 +15,10 @@ public class FlatMapFunctions {
 		return Arrays.asList(inputPara.toLowerCase().split("\\W+"));
 	};
 	
-	
+	//This function can be used to split the file into lines
+	public static final FlatMapFunction<String, String> multilinefile = lines -> {
+		return Arrays.asList(lines.split("\\r?\\n"));
+	};
+
 	
 }

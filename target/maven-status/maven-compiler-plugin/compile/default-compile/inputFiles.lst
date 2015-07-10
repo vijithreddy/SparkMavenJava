@@ -1,2 +1,4 @@
+/Users/vijith.reddy/git/SparkMavenJava/src/main/java/org/spark/reducers/ReducerFunctions.java
 /Users/vijith.reddy/git/SparkMavenJava/src/main/java/org/spark/workingsample/WordCountSpark.java
-/Users/vijith.reddy/git/SparkMavenJava/src/main/java/org/spark/App.java
+/Users/vijith.reddy/git/SparkMavenJava/src/main/java/org/spark/flatmaps/FlatMapFunctions.java
+/Users/vijith.reddy/git/SparkMavenJava/src/main/java/org/spark/mappers/MapperFunctions.java

@@ -10,12 +10,12 @@ import scala.Tuple2;
  */
 public class ReducerFunctions {
 	// Word count use case: Adding integers with same keys
-	Function2<Integer, Integer, Integer> pairWords = (a, b) -> {
+	public static final Function2<Integer, Integer, Integer> pairWords = (a, b) -> {
 		return a + b;
 	};
 
 	// Filter functions can be used to filter your result set
-	Function<Tuple2<String, String>, Boolean> func = (map) -> {
+	public static final Function<Tuple2<String, String>, Boolean> func = (map) -> {
 		return (map._2.equals("key"));
 	};
 

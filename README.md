@@ -43,9 +43,11 @@ Step 5 : Download Spark from https://spark.apache.org/downloads.html  and extrac
 
 Step 6: Build and Install Apache Spark 
 
-sbt/sbt clean assembly (sbt directory is under extracted spark installed directory)
+sbt/sbt clean assembly (sbt directory is under the extracted spark directory)
 
 Step 7: Fire up Spark shell (pyspark or spark-shell)
+
+--For Spark Cluster:
 
 Step 8: Start Spark server:
 
@@ -53,7 +55,7 @@ Go to spark installation directory and run:
 
 ./sbin/start-master.sh
 
-Go to the logs and check the Spark master URL
+Go to the logs and check the Spark master URL (Or open up localhost:8080 and check for the spark master URL)
 
 
 Step 9: Start Spark Workder Daemons:
@@ -62,6 +64,6 @@ Step 9: Start Spark Workder Daemons:
 
 If you have not specified -c and -m values then Spark slave is assigned the entire system capacity.
 
-Check localhost:8080 for worker daemon, if not check the logs under logs directory for troubleshooting.
+Check localhost:8080 (spark UI) for worker daemon, if not check the logs under logs directory for troubleshooting.
 
 Happy Sparking!!!!

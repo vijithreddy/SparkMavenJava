@@ -15,9 +15,9 @@ Note: Spark can be installed in any unix like systems (Mac, any flavor of Linux 
 
 Skip the steps if not necessary 
 
-Step 1: Install Oracle JDK 8 (Functional programming paradigm is supported using Java 8, well not truly a 100% functional paradigm, but java has brought the best of two worlds that is: OO and Functional). For reference
+Step 1: Install Oracle JDK 8 (Functional programming paradigm is supported using Java 8, well not truly a 100% functional paradigm, but java has brought the best of two worlds that is: OO and Functional). 
 
-Note: Please do not use Open JDK
+Note: To download java8 please use the link below. Please do not use Open JDK
 
 http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html 
 

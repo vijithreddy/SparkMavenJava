@@ -43,7 +43,9 @@ Step 5 : Download Spark from https://spark.apache.org/downloads.html  and extrac
 
 Step 6: Build and Install Apache Spark 
 
-sbt/sbt clean assembly (sbt directory is under the extracted spark directory)
+build/sbt clean assembly (build directory is under the extracted spark directory)
+or 
+build/mvn -Pyarn -Phadoop-2.4 -Dhadoop.version=2.4.0 -DskipTests clean package
 
 Step 7: Fire up Spark shell (pyspark or spark-shell)
 

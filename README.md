@@ -17,7 +17,10 @@ Skip the steps if not necessary
 
 Step 1: Install Oracle JDK 8 (Functional programming paradigm is supported using Java 8, well not truly a 100% functional paradigm, but java has brought the best of two worlds that is: OO and Functional). 
 
-Note: To download java8 please use the link below. Please do not use Open JDK
+
+Notes: You can deploy Spark applications with JDK 7 as well.
+
+To download java8 please use the link below. Please do not use Open JDK
 
 http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html 
 
